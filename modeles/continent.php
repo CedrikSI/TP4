@@ -74,8 +74,43 @@ class Continent {
                 return $leResultat;
  
         }
+/**
+ * Permet d'ajouter des continents
+ *
+ * @param Continent $continent continent à ajouter
+ * @return integer resultat ( 1 si l'opération a réussi, 0 sinon)
+ */
+        public static function add(Continent $continent) :int
+        {
+                $req=MonPdo::getInstance()-prepare("update  continent set libelle= :libelle where num= :num");
+                $req->bindParam(':libelle', $continent->getLibelle());
+                $nb=$req->execute();
+                return $nb;
+        }
+        /**
+         * Permet de modifier un continent
+         *
+         * @param Continent $continent continent à modifier 
+         * @return integer resultat ( 1 si l'opération a réussi, 0 sinon)
+         */
+      public static function update(Continent $continent) :int{
+        $req=MonPdo::getInstance()-prepare("update  continent set libelle= :libelle where num= :id");
+        $req->bindParam(':id', $continent->getNum());
+        $req->bindParam(':libelle', $continent->getLibell());
+        $nb=$req->execute();
+        return $nb;
 
-
+      }
+      /**
+       * Permet de supprimer un continent
+       *
+       * @param Continent $continent
+       * @return integer
+       */
+      public static function delete(Continent $continent) :int{
+        $req=MonPdo::getInstance()-prepare("delete from continent where num= :id");
+        $req->bindParam(':id', $continent->getNum());
+        $nb=$req->execute();
+        return $nb;
 }
-
 ?>
