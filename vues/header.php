@@ -14,6 +14,7 @@
 
     <!-- Bootstrap core CSS -->
  <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css"> 
+ <link rel="stylesheet" href="style.css">
  
 
     <!-- Favicons -->
@@ -83,25 +84,10 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"> Gestion des continents</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="index.php?uc=continents&action=list">Liste des continents </a>
-          <a class="dropdown-item" href="">Ajouter un continent</a>
+          <a class="dropdown-item" href="index.php?uc=continents&action=list">Liste des continents</a>
+          <a class="dropdown-item" href="index.php?uc=continents&action=add">Ajouter un continent</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
-<?php
-if(!empty($_SESSION['message'])){
-  $mesMessages=$_SESSION['message'];
-  foreach($mesMessages as $key=>$message){
-    echo ' <div class="container pt-5">
-             <div class="alert alert-'.$key.' alert-dismissible fade show" role="alert">'.$message.'
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        </div>';
-  }
-  $_SESSION['message']=[];
-}
-?> 

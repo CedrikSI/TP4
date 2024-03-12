@@ -16,7 +16,7 @@ class Nationalite {
     private $libelle;
 
     /**
-     * num continent (clé étrangère) relié à num de continent
+     * num nationalite (clé étrangère) relié à num de continent
      *
      * @var int
      */
@@ -54,22 +54,22 @@ class Nationalite {
     }
 
     /**
-     * Renvoie l'objet continent associé
+     * Renvoie l'objet nationalite associé
      *
-     * @return Continent
+     * @return nationalite
      */
-    public function getNumContinent() : Continent
+    public function getNumContinent() : nationalite
     {
-        return Continent::findById($this->numContinent);
+        return nationalite::findById($this->numContinent);
     }
 
     /**
-     * Ecrit le num continent
+     * Ecrit le num nationalite
      *
-     * @param Continent $continent
+     * @param Continent $nationalite
      * @return self
      */
-    public function setNumContinent(Continent $continent) : self
+    public function setNumContinent(Nationalite $nationalite) : self
     {
         $this->numContinent = $continent->getNum();
 
