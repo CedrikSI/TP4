@@ -22,9 +22,10 @@ switch($action){
             }else{
                 $_SESSION['message']=["danger"=>"le continent n'a pas été supprimé "];
             }
-            header('location: index.php?uc=continents&action=list');
-            exit();
+        header('location: index.php?uc=continents&action=list');
+        exit();
         break;
+
         case 'valideForm' :
             $continent= new Continent();
             if(empty($_POST['num'])){ // cas d'un création

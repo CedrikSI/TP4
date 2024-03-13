@@ -28,8 +28,8 @@
 
 $("a[data-suppression]").click(function(){
   var lien = $(this).attr("data-suppression");
+  var message = $(this).attr("data-message");
   $("#btnSuppr").attr("href",lien);
-
 
 });
 </script>
