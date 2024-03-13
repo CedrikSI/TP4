@@ -70,8 +70,7 @@ class Continent {
     {
         $req=MonPdo::getInstance()->prepare("Select * from continent where num= :id");
         $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Continent');
-        $num=$continent->getNum();
-        $req->bindParam(':id' , $num);
+        $req->bindParam(':id' , $id);
         $req->execute();
         $lesResultats=$req->fetch();
         return $lesResultats; 
