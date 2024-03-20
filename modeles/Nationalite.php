@@ -20,7 +20,7 @@ class Nationalite {
      *
      * @var int
      */
-    private $numContinent;
+    private $numnationalite;
 
     /**
     * Get the value of num
@@ -58,20 +58,20 @@ class Nationalite {
      *
      * @return nationalite
      */
-    public function getNumContinent() : nationalite
+    public function getNumNationalite() : nationalite
     {
-        return nationalite::findById($this->numContinent);
+        return nationalite::findById($this->numNationalite);
     }
 
     /**
      * Ecrit le num nationalite
      *
-     * @param Continent $nationalite
+     * @param nationalite $nationalite
      * @return self
      */
-    public function setNumContinent(Nationalite $nationalite) : self
+    public function setNumNationalite(Nationalite $nationalite) : self
     {
-        $this->numContinent = $continent->getNum();
+        $this->numNationalite = $nationalite->getNum();
 
         return $this;
     }
@@ -82,8 +82,9 @@ class Nationalite {
      */
     public static function findAll() :array
     {
-        $req=MonPdo::getInstance()->prepare("select n.num, n.libelle as 'libNation', c.libelle as 'libContinent' from nationalite n, continent c where n.numContinent=c.num");
-        $req->setFetchMode(PDO::FETCH_OBJ);
+        //$req=MonPdo::getInstance()->prepare("select n.num, n.libelle as 'libNation', c.libelle as 'libContinent' from nationalite n, continent c where n.numContinent=c.num");
+        $req=MonPdo::getInstance()->prepare("select * from nationalite");
+        $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Nationalite');
         $req->execute();
         $lesResultats=$req->fetchAll();
         return $lesResultats;

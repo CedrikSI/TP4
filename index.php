@@ -4,6 +4,7 @@ session_start();
  include ("modeles/continent.php");
  include ("modeles/monPdo.php");
  include ("vues/messageFlash.php");
+ include ("modeles/Nationalite.php");
 
   $uc = empty($_GET['uc']) ? 'accueil' : $_GET['uc'];
   
@@ -14,6 +15,9 @@ session_start();
     case 'continents'  :
       include ("controller/continentController.php");
       break;
+    case 'nationalites' :
+      include ("controller/nationaliteController.php") ;
+      break;
   }
   
 
@@ -21,4 +25,3 @@ session_start();
 include ("vues/footer.php");
 ?> 
 
-<?php

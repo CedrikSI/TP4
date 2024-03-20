@@ -1,15 +1,15 @@
 
-<div id="modalSupression" class="modal fade" role="document">
+<div id="modalsupr" class="modal fade" role="document">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">confirmation de suppression</h5>
+        <h5 class="modal-title">Confirmation de suppression</h5>
       </div>
       <div class="modal-body"> 
-        <p>Voulez vous supprimer cette nationalité ?</p>
+        <p>Voulez vous supprimer ce continent</p>
       </div>
       <div class="modal-footer">
-        <a href='index.php?uc=continents&action=delete&num="<?php.$continent->getNum().?>"' class="btn btn-primary" id='btnsupr'>Supprimer</a>
+        <a href='index.php?uc=continents&action=delete&num="<?php echo $continent->getNum() ?>"' class="btn btn-primary" id='btnsupr'>Supprimer</a>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ne pas supprimer</button>
       </div>
     </div>
