@@ -10,7 +10,7 @@ session_start();
   
   switch($uc){
     case 'accueil' :
-      include ("vues/accueil.php");
+      include ("vues/Accueil.php");
       break;
     case 'continents'  :
       include ("controller/continentController.php");
@@ -19,9 +19,7 @@ session_start();
       include ("controller/nationaliteController.php") ;
       break;
   }
-  
 
-
-include ("vues/footer.php");
+  include "vues/footer.php";
 ?> 
 

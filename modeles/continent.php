@@ -119,7 +119,7 @@ class Continent {
     {
         $req=MonPdo::getInstance()->prepare("delete from continent where num= :id");
         $num=$continent->getNum();
-        $req->bindParam(':id' , $continent->$num);
+        $req->bindParam(':id' , $num);
         $nb=$req->execute();
         return $nb; 
     }

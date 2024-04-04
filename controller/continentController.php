@@ -22,6 +22,7 @@ switch($action){
             }else{
                 $_SESSION['message']=["danger"=>"le continent n'a pas été supprimé "];
             }
+           
         header('location: index.php?uc=continents&action=list');
         exit();
         break;
@@ -44,6 +45,6 @@ switch($action){
             }
             header('location: index.php?uc=continents&action=list');
             exit();
-        break;
+            break;
             }
         

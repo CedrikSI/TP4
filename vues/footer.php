@@ -9,7 +9,7 @@
         <p>Voulez vous supprimer ce continent</p>
       </div>
       <div class="modal-footer">
-        <a href='index.php?uc=continents&action=delete&num="<?php echo $continent->getNum() ?>"' class="btn btn-primary" id='btnsupr'>Supprimer</a>
+        <a href='' class="btn btn-primary" id='btnSuppr'>Supprimer</a>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ne pas supprimer</button>
       </div>
     </div>
@@ -28,6 +28,9 @@
 
 $("a[data-suppression]").click(function(){
   var lien = $(this).attr("data-suppression");
+  console.log(lien);
+  var lienModalSupr = document.getElementById('modalsup');
+  console.log(lienModalSupr);
   var message = $(this).attr("data-message");
   $("#btnSuppr").attr("href",lien);
 
