@@ -12,6 +12,7 @@
     <tr class="d-flex">
       <th scope="col" class="col-md-2">Numéro</th>
       <th scope="col" class="col-md-8">Libellé</th>
+      <th scope="col" class="col-md-8">Continent</th>
       <th scope="col" class="col-md-2">Actions</th>
     </tr>
   </thead>
@@ -20,7 +21,8 @@
     foreach($lesnationalites as $nationalite){
         echo "<tr class='d-flex'>";
         echo "<td class='col-md-2'>".$nationalite->getNum()."</td>";
-        echo "<td class='col-md-8'>".$nationalite->getlibelle()."</td>";
+        echo "<td class='col-md-4'>".$nationalite->getLibelle()."</td>";
+        echo "<td class='col-md-4'>".$nationalite->getContinent()->getLibelle()."</td>";
         echo "<td class='col-md-2'>
         <a href='index.php?uc=nationalite&action=update&num=".$nationalite->getNum()."' class='btn btn-primary'><i class='fas fa-pen'></i></a>
         <a href='#modalsupr' data-toggle='modal' data-suppression='index.php?uc=nationalite&action=delete&num=".$nationalite->getNum()."' class='btn btn-danger'><i class='fas fa-trash-alt'></i></a>

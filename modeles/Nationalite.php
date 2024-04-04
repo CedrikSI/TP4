@@ -20,7 +20,7 @@ class Nationalite {
      *
      * @var int
      */
-    private $numnationalite;
+    private $numContinent;
 
     /**
     * Get the value of num
@@ -56,22 +56,22 @@ class Nationalite {
     /**
      * Renvoie l'objet nationalite associé
      *
-     * @return nationalite
+     * @return continent
      */
-    public function getNumNationalite() : nationalite
+    public function getContinent() : continent
     {
-        return nationalite::findById($this->numNationalite);
+        return continent::findById($this->numContinent);
     }
 
     /**
      * Ecrit le num nationalite
      *
-     * @param nationalite $nationalite
+     * @param Continent $continent
      * @return self
      */
-    public function setNumNationalite(Nationalite $nationalite) : self
+    public function setContinent(Continent $cont) : self
     {
-        $this->numNationalite = $nationalite->getNum();
+        $this->numContinent = $cont->getNum();
 
         return $this;
     }

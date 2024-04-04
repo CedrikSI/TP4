@@ -18,6 +18,12 @@ session_start();
     case 'nationalites' :
       include ("controller/nationaliteController.php") ;
       break;
+    case 'genre' :
+      include ("controller/genreController.php");
+      break;
+    case 'livre' :
+      include ("controller/livreController.php");
+      break;
   }
 
   include "vues/footer.php";

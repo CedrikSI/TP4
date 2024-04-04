@@ -28,9 +28,7 @@
 
 $("a[data-suppression]").click(function(){
   var lien = $(this).attr("data-suppression");
-  console.log(lien);
   var lienModalSupr = document.getElementById('modalsup');
-  console.log(lienModalSupr);
   var message = $(this).attr("data-message");
   $("#btnSuppr").attr("href",lien);
 
