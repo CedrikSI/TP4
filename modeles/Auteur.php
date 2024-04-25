@@ -34,14 +34,6 @@ class Auteur {
     }
 
     /**
-     * num nationalite (clé étrangère) relié à num de nationalite
-     *
-     * @var int
-     */
-    private $numNationalite;
-
-
-    /**
      * ecrit dans le libelle
      *
      * @param string $libelle
@@ -54,32 +46,10 @@ class Auteur {
     return $this;
     }
 
-    /**
-     * Renvoie l'objet nationalite associé
-     *
-     * @return Nationalite
-     */
-    public function getNumNationalite() : Nationalite
-    {
-        return Nationalite::findById($this->numNationalite);
-    }
-
-    /**
-     * Ecrit la nationalite
-     *
-     * @param Nationalite $nationalite
-     * @return self
-     */ 
-    public function setNumNationalite(Nationalite $nationalite) : self
-    {
-        $this->numNationalite = $nationalite->getNum();
-
-        return $this;
-    }
 
     public static function findAll() :array
     {
-        $req=MonPdo::getInstance()->prepare("Select * from auteur");
+        $req=MonPdo::getInstance()->prepare("Select * from auteur a join nationalite n on a.numnationalite=n.num");
         $req->setFetchMode(PDO::FETCH_OBJ);
         $req->execute();
         $lesResultats=$req->fetchAll();

@@ -15,7 +15,7 @@
       <th scope="col" class="col-md-2">Actions</th>
     </tr>
   </thead>
-  <tbody>     
+  <tbody>
 <?php
     foreach($lesContinents as $continent){
         echo "<tr class='d-flex'>";
@@ -23,11 +23,28 @@
         echo "<td class='col-md-8'>".$continent->getlibelle()."</td>";
         echo "<td class='col-md-2'>
         <a href='index.php?uc=continents&action=update&num=".$continent->getNum()."' class='btn btn-primary'><i class='fas fa-pen'></i></a>
-        <a href='#modalsupr' data-toggle='modal' data-suppression='index.php?uc=continents&action=delete&num=".$continent->getNum()."' class='btn btn-danger'><i class='fas fa-trash-alt'></i></a>
+        <a href='#modalSuppression' data-toggle='modal' data-message='Voulez vous supprimer ce continent ?' data-suppression='index.php?uc=continents&action=delete&num=".$continent->getNum()."' class='btn btn-danger'><i class='fas fa-trash-alt'></i></a>
     </td>";
     echo "</tr>";
     }
 ?>
+</div>  
+<div id="modalSuppression" class="modal fade" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmation de suppression</h5>
+      </div>
+      <div class="modal-body">
+        <p>Voulez-vous supprimer ce continent ? </p>
+      </div>
+      <div class="modal-footer">
+        <a href=""class="btn btn-primary" id="btnSuppr">Supprimer</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ne pas supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>
   </tbody>
 </table>
 </div> 

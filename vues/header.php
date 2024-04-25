@@ -14,7 +14,6 @@
 
     <!-- Bootstrap core CSS -->
  <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css"> 
- <link rel="stylesheet" href="style.css">
  
 
     <!-- Favicons -->
@@ -62,29 +61,29 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-star"></i>  Gestion des genres</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="listeGenres.php">Liste des genres </a>
-          <a class="dropdown-item" href="formAjoutGenres.php">Ajouter un genre</a>
+          <a class="dropdown-item" href="index.php?uc=genres&action=list">Liste des genres </a>
+          <a class="dropdown-item" href="index.php?uc=genres&action=add">Ajouter un genre</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-person"></i> Gestion des auteurs</a>
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-person"></i> Gestion des auteurs</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="listeAuteurs.php#">Liste des auteurs </a>
-          <a class="dropdown-item" href="formAjoutAuteurs.php">Ajouter un auteur</a>
+          <a class="dropdown-item" href="index.php?uc=auteurs&action=list">Liste des auteurs </a>
+          <a class="dropdown-item" href="index.php?uc=auteurs&action=add">Ajouter un auteur</a>
           <a class="dropdown-item" href="#">Rechercher un auteur</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-flag"></i>  Gestion des nationalités</a>
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-flag"></i>  Gestion des nationalités</a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="index.php?uc=nationalites&action=list">Liste des nationalités </a>
           <a class="dropdown-item" href="index.php?uc=nationalites&action=add">Ajouter une nationalité</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false"> Gestion des continents</a>
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"> Gestion des continents</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="index.php?uc=continents&action=list">Liste des continents</a>
+          <a class="dropdown-item" href="index.php?uc=continents&action=list">Liste des continents </a>
           <a class="dropdown-item" href="index.php?uc=continents&action=add">Ajouter un continent</a>
         </div>
       </li>

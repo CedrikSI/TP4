@@ -63,17 +63,17 @@ class Continent {
     /**
      * Trouve un continent par son num
      * 
-     * @param int $id numéro dd continent
+     * @param integer $id numéro dd continent
      * @return Continent objet continent trouvé
      */
-    public static function findById(int $id) :Continent 
+    public static function findById($id) : Continent 
     {
         $req=MonPdo::getInstance()->prepare("Select * from continent where num= :id");
         $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Continent');
         $req->bindParam(':id' , $id);
         $req->execute();
-        $lesResultats=$req->fetch();
-        return $lesResultats; 
+        $leResultat=$req->fetch();
+        return $leResultat; 
     }
 
     /**
@@ -86,7 +86,7 @@ class Continent {
     {
         $req=MonPdo::getInstance()->prepare("insert into continent(libelle) values(:libelle)");
         $libelle=$continent->getLibelle();
-        $req->bindParam(':libelle' ,$libelle);
+        $req->bindParam(':libelle' , $libelle);
         $nb=$req->execute();
         return $nb; 
     }
@@ -102,8 +102,8 @@ class Continent {
         $req=MonPdo::getInstance()->prepare("update continent set libelle= :libelle where num= :id");
         $num=$continent->getNum();
         $libelle=$continent->getLibelle();
-        $req->bindParam(':id', $continent->$num);
-        $req->bindParam(':libelle', $continent->$libelle);
+        $req->bindParam(':id' , $num);
+        $req->bindParam(':libelle' , $libelle);
         $nb=$req->execute();
         return $nb; 
 
@@ -118,8 +118,7 @@ class Continent {
     public static function delete(Continent $continent) :int
     {
         $req=MonPdo::getInstance()->prepare("delete from continent where num= :id");
-        $num=$continent->getNum();
-        $req->bindParam(':id' , $num);
+        $req->bindParam(':id' , $continent->getNum());
         $nb=$req->execute();
         return $nb; 
     }
@@ -133,7 +132,7 @@ class Continent {
      *
      * @return  self
      */ 
-    public function setNum(int $num) : self
+    public function setNum(int $num) :self
     {
         $this->num = $num;
 

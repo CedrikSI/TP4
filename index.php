@@ -1,31 +1,32 @@
-<?php   ob_start();
-session_start(); 
- include ("vues/header.php");
- include ("modeles/continent.php");
- include ("modeles/monPdo.php");
- include ("vues/messageFlash.php");
- include ("modeles/Nationalite.php");
+<?php ob_start();
+session_start();
 
-  $uc = empty($_GET['uc']) ? 'accueil' : $_GET['uc'];
-  
-  switch($uc){
+include("vues/header.php");
+include("modeles/Continent.php");
+include("modeles/Auteur.php");
+include("modeles/Genre.php");
+include("modeles/Nationalite.php");
+include("modeles/MonPdo.php");
+include("vues/messagesFlash.php");
+
+$uc =empty($_GET['uc']) ? "accueil" : $_GET['uc'];
+
+switch($uc){
     case 'accueil' :
-      include ("vues/Accueil.php");
-      break;
-    case 'continents'  :
-      include ("controller/continentController.php");
-      break;
+        include('vues/accueil.php');
+    break;
+    case 'continents' :
+        include('Controllers/continentController.php');
+    break;
+    case 'auteurs' :
+        include('Controllers/auteurController.php');
+    break;
+     case 'genres' :
+        include('Controllers/genreController.php');
+    break;
     case 'nationalites' :
-      include ("controller/nationaliteController.php") ;
-      break;
-    case 'genre' :
-      include ("controller/genreController.php");
-      break;
-    case 'livre' :
-      include ("controller/livreController.php");
-      break;
-  }
-
-  include "vues/footer.php";
-?> 
-
+        include('Controllers/nationaliteController.php');
+    break;
+}
+include("vues/footer.php");
+?>
