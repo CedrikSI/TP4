@@ -3,8 +3,8 @@
  
   <div class="jumbotron container">
     <div class="container">
-      <h1 class="display-3">Bienvenue</h1>
-      <p>Bienvenue sur mon site</p>
+      <h1 class="display-3">Bibliothèque</h1>
+      <p>Bienvenue sur le site de la bibliothèque</p>
     </div>
   </div>
 
@@ -33,7 +33,7 @@
    animationEnabled: true,
    exportEnabled: true,
    title:{
-     text: "Macaron de types de livres"
+     text: "Diagramme des thèmes de livre"
    },
    subtitles: [{
      text: "pleins de thèmes disponibles"
@@ -73,4 +73,5 @@
       </div>
     </div>
   </div>
+  
 </main>
